@@ -4,7 +4,7 @@ A robust, error-tolerant JSON parser with schema validation designed
 specifically for handling partial, incomplete, or malformed JSON from AI tools,
 streaming contexts, and other unreliable sources.
 
-[![npm version](https://img.shields.io/npm/v/enhanced-json-parser.svg)](https://www.npmjs.com/package/enhanced-json-parser)
+[![npm version](https://img.shields.io/npm/v/pretty-good-json-parser.svg)](https://www.npmjs.com/package/pretty-good-json-parser)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Motivation
@@ -37,17 +37,17 @@ validation and type coercion through Zod.
 ## Installation
 
 ```bash
-npm install enhanced-json-parser
+npm install pretty-good-json-parser
 # or
-yarn add enhanced-json-parser
+yarn add pretty-good-json-parser
 # or
-pnpm add enhanced-json-parser
+pnpm add pretty-good-json-parser
 ```
 
 ## Basic Usage
 
 ```typescript
-import { parse } from 'enhanced-json-parser';
+import { parse } from 'pretty-good-json-parser';
 
 // Parse valid JSON - works like standard JSON.parse()
 const validResult = parse('{"name": "John", "age": 30}');
@@ -70,7 +70,7 @@ console.log(malformedResult); // { name: 'John Doe', age: 30 }
 The parser supports schema validation and type coercion using Zod schemas:
 
 ```typescript
-import { parse } from 'enhanced-json-parser';
+import { parse } from 'pretty-good-json-parser';
 import { z } from 'zod';
 
 // Define a schema
@@ -106,7 +106,7 @@ console.log(user);
 When receiving partial JSON from AI tools:
 
 ```typescript
-import { parse } from 'enhanced-json-parser';
+import { parse } from 'pretty-good-json-parser';
 import { z } from 'zod';
 
 const EmailSchema = z.object({
@@ -139,7 +139,7 @@ console.log(email);
 The parser handles deep nesting and recursively validates against schemas:
 
 ```typescript
-import { parse } from 'enhanced-json-parser';
+import { parse } from 'pretty-good-json-parser';
 import { z } from 'zod';
 
 const ApiResponseSchema = z.object({
@@ -184,7 +184,7 @@ console.log(response);
 The parser automatically coerces types to match schema requirements:
 
 ```typescript
-import { parse } from 'enhanced-json-parser';
+import { parse } from 'pretty-good-json-parser';
 import { z } from 'zod';
 
 const FormSchema = z.object({
@@ -212,7 +212,7 @@ console.log(result);
 ### Discriminated Unions
 
 ```typescript
-import { parse } from 'enhanced-json-parser';
+import { parse } from 'pretty-good-json-parser';
 import { z } from 'zod';
 
 const Shape = z.discriminatedUnion('type', [
