@@ -1,4 +1,4 @@
-# Enhanced Best-Effort JSON Parser
+# Pretty Good JSON Parser (PGJP)
 
 A robust, error-tolerant JSON parser with schema validation designed
 specifically for handling partial, incomplete, or malformed JSON from AI tools,
